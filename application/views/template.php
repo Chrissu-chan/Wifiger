@@ -80,7 +80,7 @@
 						<a href="javascript:;" class="dropdown-item">Calendar</a>
 						<a href="javascript:;" class="dropdown-item">Setting</a>
 						<div class="dropdown-divider"></div>
-						<a href="javascript:;" class="dropdown-item">Log Out</a>
+						<a href="<?= base_url('auth/logout');?>" class="dropdown-item">Log Out</a>
 					</div>
 				</li>
 			</ul>
