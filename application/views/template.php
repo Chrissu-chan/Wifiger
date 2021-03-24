@@ -16,9 +16,11 @@
 	<link href="<?= base_url('assets/plugins/bootstrap/4.1.3/css/bootstrap.min.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('assets/plugins/font-awesome/5.2/css/all.min.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('assets/plugins/animate/animate.min.css') ?>" rel="stylesheet" />
+	<link href="<?= base_url('assets/plugins/DataTables/media/css/jquery.dataTables.min.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('assets/css/default/style.min.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('assets/css/default/style-responsive.min.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('assets/css/default/theme/default.css') ?>" rel="stylesheet" />
+	
 	<!-- ================== END BASE CSS STYLE ================== -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
@@ -39,8 +41,6 @@
 				<a href="index.html" class="navbar-brand"><span class="navbar-logo"></span> <b>Wifiger</b></a>
 				<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
 				</button>
 			</div>
 			<!-- end navbar-header -->
@@ -54,32 +54,14 @@
 							<button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
 						</div>
 					</form>
-				</li>
-				<li class="dropdown">
-					<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14">
-						<i class="fa fa-bell"></i>
-						<span class="label">0</span>
-					</a>
-					<ul class="dropdown-menu media-list dropdown-menu-right">
-						<li class="dropdown-header">NOTIFICATIONS (0)</li>
-						<li class="text-center width-300 p-b-10">
-							No notification found
-						</li>
-					</ul>
-				</li>
 				<li class="dropdown navbar-user">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 						<div class="image image-icon bg-black text-grey-darker">
 							<i class="fa fa-user"></i>
 						</div>
-						<span class="d-none d-md-inline">Adam Schwartz</span> <b class="caret"></b>
+						<span class="d-none d-md-inline">Administrator</span> <b class="caret"></b>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<a href="javascript:;" class="dropdown-item">Edit Profile</a>
-						<a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>
-						<a href="javascript:;" class="dropdown-item">Calendar</a>
-						<a href="javascript:;" class="dropdown-item">Setting</a>
-						<div class="dropdown-divider"></div>
 						<a href="<?= base_url('auth/logout');?>" class="dropdown-item">Log Out</a>
 					</div>
 				</li>
@@ -100,19 +82,7 @@
 							<div class="image image-icon bg-black text-grey-darker">
 								<i class="fa fa-user"></i>
 							</div>
-							<div class="info">
-								<b class="caret pull-right"></b>
-								Sean Ngu
-								<small>Front end developer</small>
-							</div>
 						</a>
-					</li>
-					<li>
-						<ul class="nav nav-profile">
-							<li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
-							<li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
-							<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
-						</ul>
 					</li>
 				</ul>
 				<!-- end sidebar user -->
@@ -121,43 +91,29 @@
 					<li class="nav-header">Navigation</li>
 					<li class="active">
 						<a href="index.html">
-							<i class="fa fa-th-large"></i>
-							<span>Home</span>
+							<i class="fa fa-database"></i>
+							<span>Master</span>
 						</a>
 					</li>
 					<li class="has-sub">
 						<a href="javascript:;">
 							<b class="caret"></b>
-							<i class="fa fa-align-left"></i> 
-							<span>Menu Level</span>
+							<i class="fa fa-exchange-alt"></i> 
+							<span>Transaksi</span>
 						</a>
 						<ul class="sub-menu">
 							<li class="has-sub">
-								<a href="javascript:;">
-									<b class="caret"></b>
-									Menu 1.1
-								</a>
-								<ul class="sub-menu">
-									<li class="has-sub">
-										<a href="javascript:;">
-											<b class="caret"></b>
-											Menu 2.1
-										</a>
-										<ul class="sub-menu">
-											<li><a href="javascript:;">Menu 3.1</a></li>
-											<li><a href="javascript:;">Menu 3.2</a></li>
-										</ul>
-									</li>
-									<li><a href="javascript:;">Menu 2.2</a></li>
-									<li><a href="javascript:;">Menu 2.3</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:;">Menu 1.2</a></li>
-							<li><a href="javascript:;">Menu 1.3</a></li>
+							<li><a href="<?= base_url('pelanggan');?>">Pelanggan</a></li>
+							<li><a href="javascript:;">Deposito</a></li>
 						</ul>
+					        <li class="active">
+						    <a href="index.html">
+							  <i class="fa fa-shopping-cart"></i>
+							  <span>Pemasangan</span>
+						</a>
+					</li>
 					</li>
 					<!-- begin sidebar minify button -->
-					<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
 					<!-- end sidebar minify button -->
 				</ul>
 				<!-- end sidebar nav -->
@@ -187,6 +143,7 @@
 	<script src="<?= base_url('assets/plugins/js-cookie/js.cookie.js') ?>"></script>
 	<script src="<?= base_url('assets/js/theme/default.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/apps.min.js') ?>"></script>
+	<script src="<?= base_url('assets/plugins/DataTables/media/js/jquery.dataTables.min.js') ?>"></script>
 	<!-- ================== END BASE JS ================== -->
 	
 	<script>
@@ -194,5 +151,32 @@
 			App.init();
 		});
 	</script>
+	<script>
+		$('#tabel1').DataTable({
+			"responsive": true,
+            "autoWidth": false,
+		    "columns" : [
+				{
+					"sortable" : true
+				},
+				{
+					"sortable" : true
+				},
+				{
+					"sortable" : false
+				},
+				{
+					"sortable" : false
+				},
+				{
+					"sortable" : false
+				},
+				{
+					"sortable" : false
+				}
+			] 
+
+		});
+  </script>
 </body>
 </html>

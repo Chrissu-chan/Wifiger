@@ -52,7 +52,7 @@
 				<!-- begin login-content -->
 				<div class="login-content">
                 <h1>Wifiger</h1> 
-                
+        
                 <?=$this->session->flashdata('pesan');?>
 
 					<form action="<?= base_url('auth');?>" method="post" class="margin-bottom-0">

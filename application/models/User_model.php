@@ -7,7 +7,8 @@ class User_model extends CI_Model {
 		$query = $this->db->get_where('user', ['username' => $username]);
 		return $query; // mengembalikan data objek
 	}
-    public function getUser($id = null) {
+    
+	public function getUser($id = null) {
 		$this->db->from('user');
 		if ($id != null) { 
 			$this->db->where('id_user', $id);
@@ -16,5 +17,4 @@ class User_model extends CI_Model {
 		$query = $this->db->get();
 		return $query;
 	}
-
 }
